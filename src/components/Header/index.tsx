@@ -45,7 +45,7 @@ export default function Header({ image }: HeaderProps) {
          case '/installations':
             setPage('installations');
             break;  
-         case 'rooms':
+         case '/rooms':
             setPage('rooms');
             break;
          case '/contact':
