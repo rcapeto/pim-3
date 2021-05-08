@@ -27,6 +27,7 @@ export default function Home() {
    useEffect(() => {
       getComments();
       getRooms();
+      window.scroll({ top: 0, behavior: 'smooth' });
    }, [getComments, getRooms]);
 
    return(
