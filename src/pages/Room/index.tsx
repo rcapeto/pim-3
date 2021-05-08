@@ -4,6 +4,7 @@ import { FaAngleLeft } from 'react-icons/fa';
 
 import { api } from '../../server/api';
 import { Room } from '../../interfaces';
+import { maskPrice } from '../../utils';
 
 import SliderImage from './components/Slider';
 import Footer from '../../components/Footer';
@@ -106,7 +107,7 @@ export default function RoomPage() {
                   }
                </div>
                <div className="right font-n">
-                  <p>R$ {room.price}/dia</p>
+                  <p>{maskPrice(room.price)} por noite</p>
                </div>
             </div>
 
