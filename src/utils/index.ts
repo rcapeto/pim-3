@@ -43,3 +43,8 @@ export const installationsItems = [
       name: 'Lavanderia'
    }
 ];
+
+export function maskPrice(prices: string) {
+   let price = parseInt(prices).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+   return price;
+}
