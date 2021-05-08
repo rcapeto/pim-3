@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { FaAngleDown } from 'react-icons/fa';
 
-import './styles.css';
+import './styles.scss';
 
 import { HARHotel } from '../../utils';
 
-export default function Header() {
+interface HeaderProps {
+   image?:string;
+}
+
+type PageProps = 'home' | 'rooms' | 'installations' | 'contact';
+
+export default function Header({ image }: HeaderProps) {
    const [menuActive, setMenuActive] = useState(false);
+   const [page, setPage] = useState<PageProps>('home');
 
    function closeModal() {
       setMenuActive(false);
@@ -28,18 +35,36 @@ export default function Header() {
       return () => window.removeEventListener('resize', onResize);
    }, []);
 
+   useEffect(() => {
+      const pathname = window.location.pathname;
+
+      switch(pathname) {
+         case '/':
+            setPage('home');
+            break;
+         case '/installations':
+            setPage('installations');
+            break;  
+         case 'rooms':
+            setPage('rooms');
+            break;
+         case '/contact':
+            setPage('contact');
+      }
+   }, []);
+
    return(
       <div className="hotel-header">
-         <img src={HARHotel.main} alt="HAR Hotel" />
+         <img src={image || HARHotel.main} alt="HAR Hotel" />
 
          <div className="hotel-header-overflow">
             <div className="header-content">
                <nav>
                   <div className="links">
-                     <Link to="/" className="active">Início</Link>
-                     <Link to="/">Instalações</Link>
-                     <Link to="/">Quartos</Link>
-                     <Link to="/">Contato</Link>
+                     <Link to="/" className={`${page === 'home' ? 'active' : ''}`}>Início</Link>
+                     <Link to="/" className={`${page === 'installations' ? 'active' : ''}`}>Instalações</Link>
+                     <Link to="/" className={`${page === 'rooms' ? 'active' : ''}`}>Quartos</Link>
+                     <Link to="/" className={`${page === 'contact' ? 'active' : ''}`}>Contato</Link>
                   </div>
 
                   <div className="button-open-container">

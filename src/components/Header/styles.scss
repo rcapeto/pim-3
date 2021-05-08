@@ -1,0 +1,246 @@
+.hotel-header {
+   height: 100vh;
+   position: relative;
+   max-width: 100vw;
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+   }
+}
+
+.hotel-header-overflow {
+   background: rgba(20, 39, 74, 0.5);
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+
+.header-content {
+   padding: 59px 0px 20px 0px;
+   max-width: 1400px;
+   margin: 0 auto;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .links {
+         width: 700px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0 10px;
+
+         a {
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 5px;
+
+            &::after {
+               content: '';
+               position: absolute;
+               bottom: 0;
+               left: 0;
+               width: 0%;
+               background-color: var(--white);
+               height: 5px;
+            }
+   
+            &:hover::after,
+            &.active::after {
+               width: 100%;
+               transition: all ease .6s;
+            }
+         }
+      }
+   }
+}
+
+.button-open-container {
+   display: none;
+   opacity: 0;
+   visibility: hidden;
+   padding: 0 20px;
+
+   button {
+      background: transparent;
+      border: 0;
+      outline: 0;
+   }
+}
+
+@keyframes menuAppear {
+   from {
+      left: -300px;
+      opacity: 0;
+   } to {
+      left: 0;
+      opacity: 1;
+   }
+}
+
+.menu-mobile {
+   position: absolute;
+   top: 0;
+   min-width: 240px;
+   animation: menuAppear .6s forwards;
+
+   .menu-mobile-content {
+      width: 100%;
+      min-height: 400px;
+      position: relative;
+      background: rgba(20, 39, 74, 1);
+      padding: 50px 0px 0px 0px;
+
+      .menu-logo {
+         margin: 0 auto;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-items: center;
+         width: 100%;
+
+         h1 {
+            color: var(--white);
+         }
+
+         p {
+            color: var(--white);
+         } 
+      }
+
+      .links-mobile {
+         display: flex;
+         height: 100%;
+         flex-direction: column;
+
+         a {
+            color: var(--white);
+            font-size: 1.3rem;
+            border-bottom: 1px solid var(--white);
+            padding: 1rem 0 1rem 1rem;
+
+            &:last-child {
+               border: 0;
+
+            }
+         }
+      }
+
+      .close-menu-mobile {
+         position: absolute;
+         top: 10px;
+         border: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background-color: transparent;
+         right: 10px;
+      }
+   }
+}
+
+.welcome {
+   display: flex;
+   flex-direction: column;
+   padding-left: 20px;
+
+   h3 {
+      font-size: 3rem;
+      color: var(--white);
+      font-weight: 400;
+   }
+
+   .logo-hotel {
+      width: 30%;
+
+      h1 {
+         font-size: 7rem;
+         color: var(--white);
+         font-weight: 400;
+      }
+
+      h2 {
+         font-size: 2rem;
+         margin-top: -20px;
+         color: var(--white);
+         font-weight: 400;
+         width: 55%;
+         text-align: center;
+      }
+   }
+}
+
+.icon-scroll {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   p {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 15px;
+   }
+
+   .icon {
+      background-color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+   }
+}
+
+@media (max-width: 700px) {
+   .welcome {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+
+      h3 {
+         font-size: 3rem;
+         color: var(--white);
+         font-weight: 400;
+         text-align: center;
+      }
+
+      .logo-hotel {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         align-items: center;
+         justify-content: center;
+      }
+   }
+}
+
+@media (max-width: 450px) {
+   .header-content nav .links {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+   }
+
+   .button-open-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      visibility: visible;
+   }
+}

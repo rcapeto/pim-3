@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import { Comment } from '../../interfaces';
 
-import './styles.css';
+import './styles.scss';
 
 interface SliderProps {
    comments: Comment[];
