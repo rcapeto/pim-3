@@ -70,7 +70,7 @@ export default function RoomsPage() {
                                 <div className="rooms__more-information">
                                     <div className="rooms__link">
                                         <Link to={`/rooms/${item.id}`} className="rooms__link--a">
-                                            <FaPlusCircle color="#444" /><span className="rooms__link--span">Mais Detalhes</span>
+                                            <i className="rooms__link--icon"><FaPlusCircle color="#444" /></i><span className="rooms__link--span">Mais Detalhes</span>
                                         </Link>
                                     </div>
                                     <div className="rooms__price">
