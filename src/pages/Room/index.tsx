@@ -1,4 +1,4 @@
-import  { useState, useEffect, useCallback, useRef, ChangeEvent, FormEvent } from 'react';
+import  { useState, useEffect, useCallback, useRef, FormEvent } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa';
 
@@ -8,6 +8,7 @@ import { Room } from '../../interfaces';
 import SliderImage from './components/Slider';
 import Footer from '../../components/Footer';
 import Input from './components/Input';
+import Loading from '../../components/Loading';
 
 import './styles.scss';
 
@@ -46,9 +47,6 @@ export default function RoomPage() {
       getRoom();
    }, [getRoom]);
 
-   if(!room) {
-      return <p>Carregando...</p>
-   }
 
    function handleSubmit(event: FormEvent) {
       event.preventDefault();
@@ -66,7 +64,6 @@ export default function RoomPage() {
       const cep = inputCEPressRef.current?.value;
       const city = inputCityressRef.current?.value;
 
-
       console.table({
          name,
          rg,
@@ -82,6 +79,8 @@ export default function RoomPage() {
          city
       });
    }
+
+   if(!room) return <Loading />
 
    return(
       <div className={`room-page ${room.id}${room.name.toLowerCase()}`}>

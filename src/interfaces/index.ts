@@ -12,6 +12,12 @@ export interface Room {
    images: string[];
    about: string;
 }
+export interface Rooms {
+   id: number;
+   name: string;
+   price: string;
+   images: string[];
+}
 
 export interface HARHotelProps {
    gym: string;
@@ -21,4 +27,10 @@ export interface HARHotelProps {
    restaurant: string;
    spa: string;
    pool: string;
+}
+
+export interface Installation {
+   id: number;
+   value: string;
+   name: string;
 }

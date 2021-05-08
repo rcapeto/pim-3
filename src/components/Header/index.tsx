@@ -62,9 +62,9 @@ export default function Header({ image }: HeaderProps) {
                <nav>
                   <div className="links">
                      <Link to="/" className={`${page === 'home' ? 'active' : ''}`}>Início</Link>
-                     <Link to="/" className={`${page === 'installations' ? 'active' : ''}`}>Instalações</Link>
-                     <Link to="/" className={`${page === 'rooms' ? 'active' : ''}`}>Quartos</Link>
-                     <Link to="/" className={`${page === 'contact' ? 'active' : ''}`}>Contato</Link>
+                     <Link to="/installations" className={`${page === 'installations' ? 'active' : ''}`}>Instalações</Link>
+                     <Link to="/rooms" className={`${page === 'rooms' ? 'active' : ''}`}>Quartos</Link>
+                     <Link to="/contact" className={`${page === 'contact' ? 'active' : ''}`}>Contato</Link>
                   </div>
 
                   <div className="button-open-container">
