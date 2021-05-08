@@ -1,7 +1,7 @@
+import Routes from './routes';
+
 import './styles/global.css';
 
 export default function App() {
-  return (
-    <h1>HAR HOTEL</h1>
-  );
+  return <Routes />
 }
