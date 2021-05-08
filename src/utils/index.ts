@@ -10,3 +10,36 @@ export const HARHotel: HARHotelProps = {
    main: harMainImg,
    gym: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
 }
+
+export const installationsItems = [
+   {
+      id: 1,
+      name: 'Academia',
+      value: HARHotel['gym'],
+   },
+   {
+      id: 2,
+      name: 'Bar ao ar livre',
+      value: HARHotel['bar'],
+   },
+   {
+      id: 3,
+      name: 'Spa',
+      value: HARHotel['spa'],
+   },
+   {
+      id: 4,
+      name: 'Piscina',
+      value: HARHotel['pool'],
+   },
+   {
+      id: 5,
+      name: 'Restaurante',
+      value: HARHotel['restaurant'],
+   },
+   {
+      id: 6,
+      value: HARHotel['laundry'],
+      name: 'Lavanderia'
+   }
+];

@@ -22,3 +22,9 @@ export interface HARHotelProps {
    spa: string;
    pool: string;
 }
+
+export interface Installation {
+   id: number;
+   value: string;
+   name: string;
+}
