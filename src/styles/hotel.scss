@@ -2,6 +2,17 @@
    max-width: 1600px;
    margin: 0 auto;
    padding: 20px;
+
+   .loading-home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+
+      svg {
+         animation: loading .8s infinite cubic-bezier(0.25, 0.1, 0.43, 0.35);
+      }
+   }
 }
 
 .m-hotel-container {
@@ -13,4 +24,13 @@
    font-size: 2rem;
    font-weight: 400;
    text-align: center;
+}
+
+.page-sub-info {
+   color: var(--title);
+   font-weight: 400;
+   font-size: 1rem;
+   margin-top: 20px;
+   text-align: justify;
+   line-height: 1.8rem;
 }

@@ -1,0 +1,26 @@
+.loading {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   background: rgba(20, 39, 74, 0.9);
+   color: var(--white);
+
+   h1 {
+      font-weight: 700;
+      font-size: 5rem;
+   }
+
+   h3 {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: -20px;
+   }
+
+   svg {
+      margin-top: 25px;
+      animation: loading .8s infinite cubic-bezier(0.25, 0.1, 0.43, 0.35);
+   }
+}
