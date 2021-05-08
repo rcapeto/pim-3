@@ -2,17 +2,21 @@ import './index.scss';
 
 import { useState, useEffect } from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import { api } from '../../server/api';
-// import {} from '../../interfaces';
+import { Rooms, Comment } from '../../interfaces';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Slider from '../../components/Slider'
+
 import { Link } from 'react-router-dom';
 
 export default function RoomsPage() {
-    const [rooms, setRooms] = useState([]);
+    const [rooms, setRooms] = useState<Rooms[]>([]);
     const [loading, setLoading] = useState(true);
+    const [comments, setComments] = useState<Comment[]>([])
 
     useEffect(() => {
         async function loadApiRooms() {
@@ -20,24 +24,30 @@ export default function RoomsPage() {
             setRooms(response.data);
             setLoading(false);
         };
+        async function loadApiComments() {
+            const response = await api.get('comments');
+            setComments(response.data);
+            setLoading(false);
+        };
         loadApiRooms();
+        loadApiComments();
     }, []);
 
 
-    function maskPrice(prices) {
+    function maskPrice(prices: string) {
         let price = parseInt(prices).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
         return price;
     }
 
     if (loading) {
         return (
-          <div>
-            <Header />
-            <p>Loading ...</p>
-            <Footer />
-          </div>
+            <div>
+                <Header />
+                <p>Loading ...</p>
+                <Footer />
+            </div>
         );
-      }
+    }
 
 
     return (
@@ -52,7 +62,7 @@ export default function RoomsPage() {
                         return (
                             <div className="rooms__room" key={item.id}>
                                 <div className="rooms__img">
-                                    <img src={item.images[0]} width="100%" height="100%" name={item.name}></img>
+                                    <img src={item.images[0]} width="100%" height="100%" alt={item.name}></img>
                                 </div>
                                 <div className="rooms__name">
                                     <h1 className="rooms__name--h1">{item.name}</h1>
@@ -60,7 +70,7 @@ export default function RoomsPage() {
                                 <div className="rooms__more-information">
                                     <div className="rooms__link">
                                         <Link to={`/rooms/${item.id}`} className="rooms__link--a">
-                                            <i className="room_link--icon"><FaPlusCircle color="#444" /></i><span className="rooms__link--span">Mais Detalhes</span>
+                                            <FaPlusCircle color="#444" /><span className="rooms__link--span">Mais Detalhes</span>
                                         </Link>
                                     </div>
                                     <div className="rooms__price">
@@ -74,6 +84,7 @@ export default function RoomsPage() {
                         )
                     })}
                 </div>
+            <Slider comments={comments} />
             </div>
             <Footer />
         </div>
