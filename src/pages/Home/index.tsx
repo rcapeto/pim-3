@@ -4,10 +4,11 @@ import { api } from '../../server/api';
 import { Comment, Room } from '../../interfaces';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Slider from '../../components/Slider';
 import RoomItem from '../../components/RoomItem';
 
-import './styles.css';
+import './styles.scss';
 
 export default function Home() {
    const [rooms, setRooms] = useState<Room[]>([]);
@@ -46,6 +47,8 @@ export default function Home() {
                   comments.length ? <Slider comments={comments}/> : null
                }
          </div>
+
+         <Footer />
       </div>
    );
 }
