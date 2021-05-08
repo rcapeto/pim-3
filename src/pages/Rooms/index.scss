@@ -88,6 +88,13 @@
 
 @media (max-width: 530px) {
     .rooms {
+
+        &__img{
+            img{
+                max-height: 230px;
+            }
+        }
+
         &__more-information {
             flex-direction: column;
         }
