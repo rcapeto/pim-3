@@ -10,6 +10,7 @@ export interface Room {
    id: number;
    description: string[];
    images: string[];
+   about: string;
 }
 
 export interface HARHotelProps {

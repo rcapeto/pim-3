@@ -4,6 +4,7 @@
    --white: #fff;
    --red: #ED4040;
    --green: #31A009;
+   --blue: #14274A;
 }
 
 * {
@@ -17,11 +18,12 @@ body {
    height: 100vh;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;
+   background-color: #E5E5E5;
+   overflow-x: hidden;
 }
 
-.app-container {
-   max-width: 1600px;
-   margin: 0 auto;
+.font-n {
+   font-family: 'Nunito', sans-serif;
 }
 
 button {
@@ -32,7 +34,7 @@ a {
    text-decoration: none;
 }
 
-button, textarea, input {
+button, textarea, input, a {
    font-family: 'Montserrat', sans-serif;
 }
 

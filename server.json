@@ -9,6 +9,7 @@
             "Wi-Fi",
             "54m²"
          ],
+         "about": "Uma bela suíte com uma aconchegante cama de casal, aonde tem uma linda vista e um maravilhoso espaço.",
          "id": 1,
          "name": "Suíte Amigável",
          "price": "750",
@@ -29,6 +30,7 @@
             "100m²",
             "Cozinha"
          ],
+         "about": "Para você viajar com um amigo e poder relaxar da melhor maneira se acomodando em camas de solteiro separadas.",
          "id": 2,
          "images": [
             "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
@@ -53,6 +55,7 @@
             "Bar",
             "Piscina interna"
          ],
+         "about": "Para você viajar com sua família aproveitando o luxo do nosso hotel HAR.",
          "id": 3,
          "name": "Suíte Luxo",
          "images": [

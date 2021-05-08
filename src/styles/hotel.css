@@ -1,0 +1,16 @@
+.hotel-container {
+   max-width: 1600px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+.m-hotel-container {
+   padding: 90px 20px;
+}
+
+.page-info {
+   color: var(--title);
+   font-size: 2rem;
+   font-weight: 400;
+   text-align: center;
+}
